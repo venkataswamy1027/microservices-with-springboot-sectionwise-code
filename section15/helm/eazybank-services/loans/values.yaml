@@ -1,0 +1,22 @@
+# Declare variables to be passed into your templates.
+
+deploymentName: loans-deployment
+deploymentLabel: loans
+
+replicaCount: 1
+
+image:
+  repository: eazybytes/loans
+  tag: latest
+
+containerPort: 9091
+
+service:
+  type: LoadBalancer
+  port: 9091
+  targetPort: 9091
+
+config_enabled: true
+zipkin_enabled: true
+profile_enabled: true
+eureka_enabled: true
